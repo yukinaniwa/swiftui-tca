@@ -195,6 +195,9 @@
 			);
 			mainGroup = 5C8860C32D79153E004DED3E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				5C8860FC2D7916F4004DED3E /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 5C8860CD2D79153E004DED3E /* Products */;
 			projectDirPath = "";
@@ -558,6 +561,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5C8860FC2D7916F4004DED3E /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.18.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 5C8860C42D79153E004DED3E /* Project object */;
 }
