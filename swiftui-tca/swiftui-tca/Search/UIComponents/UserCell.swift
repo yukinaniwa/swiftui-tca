@@ -13,11 +13,12 @@ struct UserCell: View {
             .clipShape(Circle())
             .frame(width: 50, height: 50)
             .padding()
+            
             Spacer()
+            
             Text(user.login)
                 .padding()
-            Spacer()
-        }
+       }
     }
 }
 

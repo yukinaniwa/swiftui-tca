@@ -46,32 +46,30 @@ struct SearchView: View {
 
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
-            NavigationView {
-                VStack(spacing: 12) {
-                    TextField("user name",
-                              text: viewStore.binding(
-                                get: \.query, send: SearchUserFeature.Action.api
-                              )
-                    )
-                    .onChange(of: viewStore.query) { _ in
-                        viewStore.send(.api(query: viewStore.query))
-                    }
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .keyboardType(.asciiCapable)
-                    .padding()
-                                        
-                    List(viewStore.users) { user in
-                        NavigationLink(destination: Text("\(user)")) {
-                            UserCell(user: user)
-                        }
-                    }
-                    .refreshable {
-                        viewStore.send(.api(query: viewStore.query))
-                    }
-                    .scrollDismissesKeyboard(.immediately)
+            VStack(spacing: 12) {
+                TextField("user name",
+                          text: viewStore.binding(
+                            get: \.query, send: SearchUserFeature.Action.api
+                          )
+                )
+                .onChange(of: viewStore.query) { _ in
+                    viewStore.send(.api(query: viewStore.query))
                 }
-                .navigationTitle("Search Github User")
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .keyboardType(.asciiCapable)
+                .padding()
+                                    
+                List(viewStore.users) { user in
+                    NavigationLink(destination: Text("\(user)")) {
+                        UserCell(user: user)
+                    }
+                }
+                .refreshable {
+                    viewStore.send(.api(query: viewStore.query))
+                }
+                .scrollDismissesKeyboard(.immediately)
             }
+            .navigationTitle("Search Github User")
         }
     }
 }
