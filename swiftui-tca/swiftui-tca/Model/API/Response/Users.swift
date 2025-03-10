@@ -2,8 +2,8 @@ import Foundation
 
 /// GithubのAPIが返すユーザーデータ。必要なプロパティのみを取得する
 struct Users: Codable {
-    let totalCount: Int
-    let incompleteResults: Bool
+    let totalCount: Int?
+    let incompleteResults: Bool?
     let items: [User]
 
     private enum CodingKeys: String, CodingKey {

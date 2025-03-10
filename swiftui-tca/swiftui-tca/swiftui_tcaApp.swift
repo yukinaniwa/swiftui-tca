@@ -13,9 +13,9 @@ struct swiftui_tcaApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView(
-                    store: Store(initialState: CounterFeature.State()) {
-                        CounterFeature()
+                SearchView(
+                    store: Store(initialState: SearchUserFeature.State()) {
+                        SearchUserFeature()
                     }
                 )
             }

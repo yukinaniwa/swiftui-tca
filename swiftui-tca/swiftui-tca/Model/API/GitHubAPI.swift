@@ -6,6 +6,7 @@ struct GitHubAPI: @unchecked Sendable {
 }
 
 extension GitHubAPI {
+    
     static let live = GitHubAPI(
         users: { query in
             var components = URLComponents()
